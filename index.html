@@ -644,7 +644,7 @@
         <div style="flex: 1; height: 6px; background: #EDE9E4; border-radius: 3px; overflow: hidden;">
           <div id="prog-bar" style="height: 100%; width: 0%; background: linear-gradient(to right, #C07858, #E8A97A); border-radius: 3px; transition: width 0.35s ease;"></div>
         </div>
-        <div id="prog-text" style="font-size: 13px; font-weight: 600; color: #C07858; white-space: nowrap;">0 / 10 complete</div>
+        <div id="prog-text" style="font-size: 13px; font-weight: 600; color: #C07858; white-space: nowrap;">0 / 9 complete</div>
       </div>
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
         <div style="background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 20px rgba(0,0,0,0.07);">
@@ -678,7 +678,6 @@
           <div style="padding: 4px 0;">
             <div class="check-row" data-cid="m1"><div class="cb-box"><svg class="cb-tick" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="cb-label">Schedule 2-month vaccinations at a polyclinic or CHAS GP clinic</div></div>
             <div class="check-row" data-cid="m2"><div class="cb-box"><svg class="cb-tick" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="cb-label">Secure Integrated Shield Plan + co-payment Rider within 100 days of birth (apply after 15 days old)</div></div>
-            <div class="check-row" data-cid="m3"><div class="cb-box"><svg class="cb-tick" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="cb-label">Apply for infant care placement queues if returning to work (6–12 month wait)</div></div>
           </div>
         </div>
       </div>
@@ -697,6 +696,10 @@
             <div style="display: flex; gap: 12px; align-items: center;"><div style="width: 20px; height: 20px; background: #C07858; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div style="font-size: 13px; color: rgba(255,255,255,0.75); font-weight: 300;">Maternity insurance — what's covered before and during delivery</div></div>
             <div style="display: flex; gap: 12px; align-items: center;"><div style="width: 20px; height: 20px; background: #C07858; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div style="font-size: 13px; color: rgba(255,255,255,0.75); font-weight: 300;">Medical insurance for your newborn — locking in coverage within the 100-day window</div></div>
             <div style="display: flex; gap: 12px; align-items: center;"><div style="width: 20px; height: 20px; background: #C07858; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div><div style="font-size: 13px; color: rgba(255,255,255,0.75); font-weight: 300;">Life insurance for the family — making sure the people who matter most are protected</div></div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; background: rgba(232,169,122,0.12); border: 1px solid rgba(232,169,122,0.3); border-radius: 10px; padding: 12px 16px; margin-bottom: 28px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8A97A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M20 12v10H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+            <div><div style="font-size: 11px; font-weight: 700; color: #E8A97A; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2px;">Exclusive Perk</div><div style="font-size: 13px; color: rgba(255,255,255,0.8); font-weight: 300; line-height: 1.5;">Clients who take up a Great Eastern plan receive the <strong style="font-weight: 600; color: white;">Great Bundle of Joy Gift Set</strong> — a curated welcome gift for your newborn.</div></div>
           </div>
           <a href="https://koalendar.com/u/ian-ting" target="_blank" rel="noopener" class="cta-btn">
             Secure Your 100-Day Plan
@@ -738,7 +741,7 @@
 (function () {
   const NAV_H = 60;
   const checked = {};
-  const TOTAL = 10;
+  const TOTAL = 9;
 
   // Scroll-spy
   function updateNav() {
