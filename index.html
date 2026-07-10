@@ -560,6 +560,166 @@
           </div>
         </div>
       </div>
+
+      <!-- Education Savings Chart -->
+      <div style="background:white; border-radius:16px; padding:28px 24px; box-shadow:0 2px 20px rgba(0,0,0,0.07); margin-top:24px;">
+        <div style="margin-bottom:20px;">
+          <div style="font-weight:700; font-size:15px; color:#1C1C2E; margin-bottom:4px; font-family:'DM Sans',sans-serif;">The Earlier You Start, the Less You Need Each Month</div>
+          <div style="font-size:12px; color:#6B7280; font-weight:300; line-height:1.65; font-family:'DM Sans',sans-serif;">Monthly savings required to hit your university target by age 19 — assumes 4% p.a. investment return</div>
+        </div>
+        <div style="display:flex; gap:6px; margin-bottom:22px; flex-wrap:wrap;">
+          <button id="edu-btn-60" onclick="eduSetTarget(60000)" style="font-family:'DM Sans',sans-serif; font-size:12px; padding:7px 14px; border-radius:20px; border:1.5px solid #1C2B3A; background:#1C2B3A; color:white; cursor:pointer; font-weight:600; white-space:nowrap; transition:all 0.2s;">$60,000 — Local University</button>
+          <button id="edu-btn-200" onclick="eduSetTarget(200000)" style="font-family:'DM Sans',sans-serif; font-size:12px; padding:7px 14px; border-radius:20px; border:1.5px solid #E2DDD8; background:transparent; color:#6B7280; cursor:pointer; font-weight:400; white-space:nowrap; transition:all 0.2s;">$200,000 — Overseas University</button>
+        </div>
+        <div style="overflow-x:auto; -webkit-overflow-scrolling:touch; margin:0 -4px;">
+          <div style="min-width:420px; padding:0 4px;">
+            <svg id="edu-svg" viewBox="0 0 580 310" width="100%" style="display:block; overflow:visible;">
+              <g id="edu-tip" style="display:none; pointer-events:none;">
+                <rect id="edu-tip-bg" rx="7" fill="#1C2B3A"/>
+                <text id="edu-tip-t1" fill="white" font-family="DM Sans, sans-serif" font-size="13" font-weight="700"/>
+                <text id="edu-tip-t2" fill="rgba(255,255,255,0.68)" font-family="DM Sans, sans-serif" font-size="11"/>
+                <text id="edu-tip-t3" fill="rgba(255,255,255,0.68)" font-family="DM Sans, sans-serif" font-size="11"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div style="display:flex; gap:20px; flex-wrap:wrap; margin-top:14px; padding:0 4px;">
+          <div style="display:flex; align-items:center; gap:7px;"><div style="width:24px; height:10px; border-radius:3px; background:#86b6ef; flex-shrink:0;"></div><span style="font-size:12px; color:#52514e; font-family:'DM Sans',sans-serif; font-weight:300;">Start at Birth (19 yrs)</span></div>
+          <div style="display:flex; align-items:center; gap:7px;"><div style="width:24px; height:10px; border-radius:3px; background:#2a78d6; flex-shrink:0;"></div><span style="font-size:12px; color:#52514e; font-family:'DM Sans',sans-serif; font-weight:300;">Start at Primary — Age 7 (12 yrs)</span></div>
+          <div style="display:flex; align-items:center; gap:7px;"><div style="width:24px; height:10px; border-radius:3px; background:#1C2B3A; flex-shrink:0;"></div><span style="font-size:12px; color:#52514e; font-family:'DM Sans',sans-serif; font-weight:300;">Start at Secondary — Age 13 (6 yrs)</span></div>
+        </div>
+        <div style="margin-top:18px; padding-top:14px; border-top:1px solid #F0EDE9;">
+          <button id="edu-tbl-btn" onclick="eduToggleTable()" style="font-family:'DM Sans',sans-serif; font-size:11px; color:#9CA3AF; background:none; border:none; cursor:pointer; padding:0; text-decoration:underline; text-underline-offset:3px;">View data as table</button>
+          <div id="edu-tbl" style="display:none; margin-top:12px; overflow-x:auto;">
+            <table style="width:100%; border-collapse:collapse; font-size:12px; font-family:'DM Sans',sans-serif; min-width:360px;">
+              <thead>
+                <tr style="border-bottom:2px solid #E2DDD8;">
+                  <th style="text-align:left; padding:7px 10px; color:#6B7280; font-weight:600;">Starting Age</th>
+                  <th style="text-align:right; padding:7px 10px; color:#6B7280; font-weight:600;">Years</th>
+                  <th style="text-align:right; padding:7px 10px; color:#6B7280; font-weight:600;">$60k Target</th>
+                  <th style="text-align:right; padding:7px 10px; color:#6B7280; font-weight:600;">$200k Target</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid #F0EDE9;">
+                  <td style="padding:8px 10px; font-weight:500; color:#1C1C2E;">Birth (Age 0)</td>
+                  <td style="padding:8px 10px; text-align:right; color:#6B7280;">19</td>
+                  <td id="etbl-60-0" style="padding:8px 10px; text-align:right; font-weight:600; color:#1C1C2E; font-variant-numeric:tabular-nums;"></td>
+                  <td id="etbl-200-0" style="padding:8px 10px; text-align:right; font-weight:600; color:#1C1C2E; font-variant-numeric:tabular-nums;"></td>
+                </tr>
+                <tr style="border-bottom:1px solid #F0EDE9;">
+                  <td style="padding:8px 10px; font-weight:500; color:#1C1C2E;">Primary School (Age 7)</td>
+                  <td style="padding:8px 10px; text-align:right; color:#6B7280;">12</td>
+                  <td id="etbl-60-1" style="padding:8px 10px; text-align:right; font-weight:600; color:#1C1C2E; font-variant-numeric:tabular-nums;"></td>
+                  <td id="etbl-200-1" style="padding:8px 10px; text-align:right; font-weight:600; color:#1C1C2E; font-variant-numeric:tabular-nums;"></td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 10px; font-weight:500; color:#1C1C2E;">Secondary School (Age 13)</td>
+                  <td style="padding:8px 10px; text-align:right; color:#6B7280;">6</td>
+                  <td id="etbl-60-2" style="padding:8px 10px; text-align:right; font-weight:600; color:#1C1C2E; font-variant-numeric:tabular-nums;"></td>
+                  <td id="etbl-200-2" style="padding:8px 10px; text-align:right; font-weight:600; color:#1C1C2E; font-variant-numeric:tabular-nums;"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <script>
+      (function(){
+        var YEARS=[19,12,6];
+        var COLORS=['#86b6ef','#2a78d6','#1C2B3A'];
+        var XLABELS=[['Start at','Birth','(19 yrs)'],['Start at','Primary','(12 yrs)'],['Start at','Secondary','(6 yrs)']];
+        function calcPMT(fv,rate,yrs){var r=rate/12,n=yrs*12;return Math.round(fv*r/(Math.pow(1+r,n)-1));}
+        var vals={};
+        [60000,200000].forEach(function(t){vals[t]=YEARS.map(function(y){return calcPMT(t,0.04,y);});});
+        // Fill table
+        [60000,200000].forEach(function(t){
+          var p=t===60000?'60':'200';
+          vals[t].forEach(function(v,i){
+            var c=document.getElementById('etbl-'+p+'-'+i);
+            if(c)c.textContent='$'+v.toLocaleString('en-SG')+'/mo';
+          });
+        });
+        // SVG layout
+        var W=580,H=310,PL=64,PR=20,PT=24,PB=70;
+        var plotW=W-PL-PR,plotH=H-PT-PB,plotB=PT+plotH;
+        var barW=88;
+        var barX=[PL+plotW/6,PL+plotW/2,PL+5*plotW/6];
+        var NS='http://www.w3.org/2000/svg';
+        var svg=document.getElementById('edu-svg');
+        var tip=document.getElementById('edu-tip');
+        function mk(tag,a){var e=document.createElementNS(NS,tag);Object.keys(a).forEach(function(k){e.setAttribute(k,a[k]);});return e;}
+        function mkT(s,a){var e=mk('text',a);e.textContent=s;return e;}
+        function ins(e){svg.insertBefore(e,tip);}
+        function axisFor(t){
+          return t===60000?{yMax:800,ticks:[0,200,400,600,800]}:{yMax:3000,ticks:[0,1000,2000,3000]};
+        }
+        function render(target){
+          [].slice.call(svg.children).forEach(function(c){if(c.id!=='edu-tip')c.remove();});
+          var ax=axisFor(target),sc=plotH/ax.yMax,vs=vals[target];
+          ax.ticks.forEach(function(t){
+            var y=plotB-t*sc;
+            if(t>0)ins(mk('line',{x1:PL,y1:y,x2:W-PR,y2:y,stroke:'#E2DDD8','stroke-width':'1'}));
+            var lbl=t>=1000?'$'+(t/1000)+'k':(t===0?'$0':'$'+t);
+            ins(mkT(lbl,{x:PL-6,y:y+4,'text-anchor':'end',fill:'#9CA3AF','font-family':'DM Sans, sans-serif','font-size':'11','font-variant-numeric':'tabular-nums'}));
+          });
+          ins(mk('line',{x1:PL,y1:plotB,x2:W-PR,y2:plotB,stroke:'#C3C2B7','stroke-width':'1'}));
+          vs.forEach(function(v,i){
+            var bh=v*sc,bx=barX[i]-barW/2,by=plotB-bh;
+            var rect=mk('rect',{x:bx,y:by,width:barW,height:bh,fill:COLORS[i],rx:'4',ry:'4',style:'cursor:pointer;'});
+            (function(iv,iv2,itarget){
+              rect.addEventListener('mouseenter',function(){showTip(iv,iv2,itarget);});
+              rect.addEventListener('mouseleave',hideTip);
+            })(i,v,target);
+            ins(rect);
+            ins(mkT('$'+v.toLocaleString('en-SG')+'/mo',{x:barX[i],y:by-8,'text-anchor':'middle',fill:'#1C1C2E','font-family':'DM Sans, sans-serif','font-size':'13','font-weight':'700','font-variant-numeric':'tabular-nums'}));
+            XLABELS[i].forEach(function(ln,li){
+              ins(mkT(ln,{x:barX[i],y:plotB+16+li*16,'text-anchor':'middle',fill:li===1?'#1C1C2E':'#9CA3AF','font-family':'DM Sans, sans-serif','font-size':li===1?'13':'11','font-weight':li===1?'600':'300'}));
+            });
+          });
+        }
+        function showTip(idx,v,target){
+          var ax=axisFor(target),months=YEARS[idx]*12,paid=v*months,growth=target-paid;
+          var t1=document.getElementById('edu-tip-t1');
+          var t2=document.getElementById('edu-tip-t2');
+          var t3=document.getElementById('edu-tip-t3');
+          var bg=document.getElementById('edu-tip-bg');
+          t1.textContent='$'+v.toLocaleString('en-SG')+' / month';
+          t2.textContent='Total saved: $'+paid.toLocaleString('en-SG')+' over '+YEARS[idx]+' years';
+          t3.textContent=growth>=0?'Returns contribute: $'+growth.toLocaleString('en-SG'):'';
+          var tw=232,th=72,bh=v*(plotH/ax.yMax);
+          var tx=barX[idx]-tw/2,ty=plotB-bh-th-14;
+          if(tx<PL)tx=PL;if(tx+tw>W-PR)tx=W-PR-tw;
+          if(ty<2)ty=2;
+          bg.setAttribute('x',tx);bg.setAttribute('y',ty);bg.setAttribute('width',tw);bg.setAttribute('height',th);
+          t1.setAttribute('x',tx+12);t1.setAttribute('y',ty+22);
+          t2.setAttribute('x',tx+12);t2.setAttribute('y',ty+40);
+          t3.setAttribute('x',tx+12);t3.setAttribute('y',ty+56);
+          tip.style.display='';
+        }
+        function hideTip(){tip.style.display='none';}
+        window.eduSetTarget=function(target){
+          var is60=target===60000;
+          ['60','200'].forEach(function(k){
+            var b=document.getElementById('edu-btn-'+k);
+            var active=(k==='60')===is60;
+            b.style.background=active?'#1C2B3A':'transparent';
+            b.style.color=active?'white':'#6B7280';
+            b.style.borderColor=active?'#1C2B3A':'#E2DDD8';
+            b.style.fontWeight=active?'600':'400';
+          });
+          render(target);
+        };
+        window.eduToggleTable=function(){
+          var tbl=document.getElementById('edu-tbl');
+          var btn=document.getElementById('edu-tbl-btn');
+          var hidden=tbl.style.display==='none';
+          tbl.style.display=hidden?'block':'none';
+          btn.textContent=hidden?'Hide table':'View data as table';
+        };
+        render(60000);
+      })();
+      </script>
     </div>
 
     <!-- S8: LEAVE & TAX -->
