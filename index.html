@@ -22,8 +22,13 @@
   .cb-box.checked .cb-tick { opacity: 1; }
   .cb-label { font-size: 13px; color: #4B5563; line-height: 1.55; font-weight: 300; transition: opacity 0.2s; }
   .cb-label.checked { text-decoration: line-through; opacity: 0.45; }
-  .cta-btn { background: linear-gradient(135deg, #C07858 0%, #A05A3A 100%); color: white; border: none; padding: 18px 36px; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 8px 28px rgba(192,120,88,0.35); transition: transform 0.2s, box-shadow 0.2s; }
+  .cta-btn { background: linear-gradient(135deg, #C07858 0%, #A05A3A 100%); color: white; border: none; padding: 18px 36px; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 8px 28px rgba(192,120,88,0.35); transition: transform 0.2s, box-shadow 0.2s; text-decoration: none; }
   .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(192,120,88,0.5); }
+  .priority-card { cursor: pointer; border: 2px solid transparent; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+  .priority-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.1) !important; }
+  .priority-card.selected { border-color: #C07858; box-shadow: 0 8px 32px rgba(192,120,88,0.22) !important; }
+  .priority-card.selected .priority-select { background: #C07858 !important; border-color: #C07858 !important; }
+  .priority-card.selected .priority-tick { opacity: 1 !important; }
 </style>
 </head>
 <body>
@@ -66,7 +71,7 @@
         <button class="nav-btn" data-sid="childcare">06&thinsp;Childcare</button>
         <button class="nav-btn" data-sid="education">07&thinsp;Education</button>
         <button class="nav-btn" data-sid="leave">08&thinsp;Leave &amp; Tax</button>
-        <button class="nav-btn" data-sid="mistakes">09&thinsp;Oversights</button>
+        <button class="nav-btn" data-sid="priorities">09&thinsp;Priorities</button>
         <button class="nav-btn" data-sid="checklist">10&thinsp;Checklist</button>
       </div>
     </div>
@@ -598,39 +603,68 @@
       </div>
     </div>
 
-    <!-- S9: OVERSIGHTS -->
-    <div id="s-mistakes" data-section="mistakes" style="padding-top: 64px;">
+    <!-- S9: PRIORITIES -->
+    <div id="s-priorities" data-section="priorities" style="padding-top: 64px;">
       <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 6px;">
-        <div style="width: 40px; height: 40px; background: #FCE8E8; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#C85858" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <div style="width: 40px; height: 40px; background: #EDEAFA; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#7070B0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
         <div>
-          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C85858; margin-bottom: 2px;">Section 09</div>
-          <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; color: #1C1C2E; margin: 0; line-height: 1.1;">5 Common Oversights New Parents Make</h2>
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #7070B0; margin-bottom: 2px;">Section 09</div>
+          <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; color: #1C1C2E; margin: 0; line-height: 1.1;">Three Priorities — Where Would You Start?</h2>
         </div>
       </div>
-      <p style="color: #6B7280; font-size: 14px; margin: 8px 0 28px; max-width: 660px; line-height: 1.75; font-weight: 300;">These are easy gaps to miss in the chaos of the first 100 days. Recognising them early is the simplest way to stay ahead.</p>
-      <div style="display: flex; flex-direction: column; gap: 12px;">
-        <div style="background: white; border-radius: 14px; padding: 22px 26px; box-shadow: 0 2px 14px rgba(0,0,0,0.05); display: flex; gap: 20px; align-items: flex-start; border-left: 4px solid #C85858;">
-          <div style="font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 700; color: #F4CCCC; line-height: 1; flex-shrink: 0; width: 36px; text-align: center;">1</div>
-          <div><div style="font-weight: 700; font-size: 15px; color: #1C1C2E; margin-bottom: 8px;">Overinsuring the baby, underinsuring the breadwinner</div><div style="font-size: 13px; color: #6B7280; line-height: 1.75; font-weight: 300;">Many parents pile into life insurance and savings policies on their newborn while leaving the family's primary income earner underprotected. If the breadwinner cannot work, no baby policy will replace that lost income. Always protect the engine that drives the family finances first.</div></div>
+      <p style="color: #6B7280; font-size: 14px; margin: 8px 0 28px; max-width: 700px; line-height: 1.8; font-weight: 300;">We've covered a lot of ground today. At the end of every sharing, I bring it back to three things — because all three are time-sensitive, and they interact with each other. Most of us bought our insurance plans when we first started working. A new baby changes your priorities, your commitments, and often reveals gaps you never noticed. <strong style="font-weight: 600; color: #1C1C2E;">Which of these would you rank as most important right now?</strong></p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px;">
+        <div class="priority-card" data-pid="1" style="background: white; border-radius: 16px; padding: 28px 24px; box-shadow: 0 2px 20px rgba(0,0,0,0.07);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+            <div style="width: 44px; height: 44px; background: #EEF3FA; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4E7CB7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </div>
+            <div class="priority-select" style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid #E2DDD8; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg class="priority-tick" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0;transition:opacity 0.15s;"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 700; color: #D0E0F5; line-height: 1; margin-bottom: 14px;">1</div>
+          <div style="font-weight: 700; font-size: 15px; color: #1C1C2E; margin-bottom: 10px; line-height: 1.35;">Review the Family's Financial Portfolio</div>
+          <div style="font-size: 12px; color: #6B7280; line-height: 1.75; font-weight: 300;">Most of our plans were bought when we first started work — before marriage, before kids. A new baby is a milestone that changes your financial commitments entirely. Time to revisit what you have, where the gaps are, and what needs to change.</div>
         </div>
-        <div style="background: white; border-radius: 14px; padding: 22px 26px; box-shadow: 0 2px 14px rgba(0,0,0,0.05); display: flex; gap: 20px; align-items: flex-start; border-left: 4px solid #E08040;">
-          <div style="font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 700; color: #FADDBB; line-height: 1; flex-shrink: 0; width: 36px; text-align: center;">2</div>
-          <div><div style="font-weight: 700; font-size: 15px; color: #1C1C2E; margin-bottom: 8px;">Not acting within the first 15 days — and missing the GIB window</div><div style="font-size: 13px; color: #6B7280; line-height: 1.75; font-weight: 300;">From 15 days old, you can apply for your child's Integrated Shield Plan directly on a clean medical record. If you hold an eligible maternity plan, the Guaranteed Insurability Benefit (GIB) lets you transfer or extend that coverage to your child within 100 days of birth — with no medical underwriting, and with protection extending to pre-existing conditions. Miss both windows and your child faces full underwriting, with the risk of exclusions or loadings based on early health records.</div></div>
+        <div class="priority-card" data-pid="2" style="background: white; border-radius: 16px; padding: 28px 24px; box-shadow: 0 2px 20px rgba(0,0,0,0.07);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+            <div style="width: 44px; height: 44px; background: #EDEAFA; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7070B0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="priority-select" style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid #E2DDD8; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg class="priority-tick" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0;transition:opacity 0.15s;"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 700; color: #D8D8F0; line-height: 1; margin-bottom: 14px;">2</div>
+          <div style="font-weight: 700; font-size: 15px; color: #1C1C2E; margin-bottom: 10px; line-height: 1.35;">Maternity + Child's Life Insurance Coverage</div>
+          <div style="font-size: 12px; color: #6B7280; line-height: 1.75; font-weight: 300;">Bundle via GIB or go standalone? These decisions carry a 15-day application window and a 100-day GIB clock — two of the tightest deadlines in personal finance. Getting this right from the start means your child is fully covered with no exclusions.</div>
         </div>
-        <div style="background: white; border-radius: 14px; padding: 22px 26px; box-shadow: 0 2px 14px rgba(0,0,0,0.05); display: flex; gap: 20px; align-items: flex-start; border-left: 4px solid #C9A820;">
-          <div style="font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 700; color: #FAE9A0; line-height: 1; flex-shrink: 0; width: 36px; text-align: center;">3</div>
-          <div><div style="font-weight: 700; font-size: 15px; color: #1C1C2E; margin-bottom: 8px;">Leaving the CDA empty — forfeiting free government money</div><div style="font-size: 13px; color: #6B7280; line-height: 1.75; font-weight: 300;">The CDA's dollar-for-dollar co-matching is a guaranteed 100% return. Yet many parents never deposit a single dollar, forfeiting up to <strong style="font-weight: 600;">$9,000</strong> in free matching funds. Systematic CDA contributions are one of the highest-returning financial moves available to any Singaporean parent.</div></div>
+        <div class="priority-card" data-pid="3" style="background: white; border-radius: 16px; padding: 28px 24px; box-shadow: 0 2px 20px rgba(0,0,0,0.07);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+            <div style="width: 44px; height: 44px; background: #FDF0E7; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C07858" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div class="priority-select" style="width: 24px; height: 24px; border-radius: 50%; border: 2px solid #E2DDD8; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg class="priority-tick" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="opacity:0;transition:opacity 0.15s;"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+          </div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 700; color: #F0DACC; line-height: 1; margin-bottom: 14px;">3</div>
+          <div style="font-weight: 700; font-size: 15px; color: #1C1C2E; margin-bottom: 10px; line-height: 1.35;">Education Planning</div>
+          <div style="font-size: 12px; color: #6B7280; line-height: 1.75; font-weight: 300;">An overseas degree could cost $250,000–$400,000+ by the time your child turns 18. Starting now lets compounding do the heavy lifting. Waiting even 3–5 years means significantly more out of pocket — for the exact same outcome.</div>
         </div>
-        <div style="background: white; border-radius: 14px; padding: 22px 26px; box-shadow: 0 2px 14px rgba(0,0,0,0.05); display: flex; gap: 20px; align-items: flex-start; border-left: 4px solid #5F9E8C;">
-          <div style="font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 700; color: #C2E8DF; line-height: 1; flex-shrink: 0; width: 36px; text-align: center;">4</div>
-          <div><div style="font-weight: 700; font-size: 15px; color: #1C1C2E; margin-bottom: 8px;">Not starting an education fund early enough</div><div style="font-size: 13px; color: #6B7280; line-height: 1.75; font-weight: 300;">An overseas university degree — tuition, accommodation, and living costs included — runs around <strong style="font-weight: 600;">$200,000</strong> today. At 3% annual cost inflation, that figure climbs well past <strong style="font-weight: 600;">$300,000</strong> in 18 years. A family that starts a dedicated education fund at birth needs roughly <strong style="font-weight: 600;">$500 – $700 a month</strong> at 6% growth to reach that goal. A family that waits until the child starts primary school at age 7 needs roughly <strong style="font-weight: 600;">$1,000 – $1,400 a month</strong> — for the same outcome.</div></div>
+      </div>
+      <div style="background: linear-gradient(150deg, #192638 0%, #253A50 55%, #1C3448 100%); border-radius: 18px; padding: 32px 36px; display: flex; gap: 32px; align-items: center; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 280px;">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: white; margin-bottom: 10px; line-height: 1.2;">Which would you rank first?</div>
+          <div style="font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.8; font-weight: 300;">Tap a card to select — there are no wrong answers. Your priorities shape exactly where we start in our 30-minute session together.</div>
         </div>
-        <div style="background: white; border-radius: 14px; padding: 22px 26px; box-shadow: 0 2px 14px rgba(0,0,0,0.05); display: flex; gap: 20px; align-items: flex-start; border-left: 4px solid #C88A5A;">
-          <div style="font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 700; color: #EDD5BB; line-height: 1; flex-shrink: 0; width: 36px; text-align: center;">5</div>
-          <div><div style="font-weight: 700; font-size: 15px; color: #1C1C2E; margin-bottom: 8px;">Leaving preschool registration too late — and missing preferred centres</div><div style="font-size: 13px; color: #6B7280; line-height: 1.75; font-weight: 300;">Singapore's most sought-after infant care and childcare centres carry waitlists of <strong style="font-weight: 600;">6 to 18 months</strong>. Many parents assume they can sort it out after birth — and then discover their top choices are full. The solution is to research and register during the third trimester, before the baby arrives. Registering at 3–4 centres simultaneously costs nothing to withdraw later, but going back in time to join a full waitlist is not an option.</div></div>
-        </div>
+        <a href="https://koalendar.com/u/ian-ting" target="_blank" rel="noopener" class="cta-btn" style="flex-shrink: 0; padding: 16px 28px;">
+          Book Your Session
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
     </div>
 
@@ -800,6 +834,13 @@
       box.style.background = done ? 'transparent' : '#3B9B8A';
       box.style.borderColor = done ? '#CABFB8' : '#3B9B8A';
       tick.style.opacity = done ? '0' : '1';
+    });
+  });
+
+  document.querySelectorAll('.priority-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.priority-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
     });
   });
 })();
