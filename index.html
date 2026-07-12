@@ -64,8 +64,8 @@
     <div style="max-width: 1100px; margin: 0 auto; padding: 0 20px;">
       <div style="display: flex; flex-wrap: nowrap; gap: 3px; padding: 10px 0; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;">
         <button class="nav-btn active" data-sid="delivery">01&thinsp;Delivery</button>
-        <button class="nav-btn" data-sid="baby-bonus">02&thinsp;Baby Bonus</button>
-        <button class="nav-btn" data-sid="cda">03&thinsp;CDA</button>
+        <button class="nav-btn" data-sid="cda">02&thinsp;CDA</button>
+        <button class="nav-btn" data-sid="baby-bonus">03&thinsp;Baby Bonus</button>
         <button class="nav-btn" data-sid="vaccination">04&thinsp;Vaccinations</button>
         <button class="nav-btn" data-sid="hospital">05&thinsp;Hospital Plan</button>
         <button class="nav-btn" data-sid="childcare">06&thinsp;Childcare</button>
@@ -125,18 +125,71 @@
       </div>
     </div>
 
-    <!-- S2: BABY BONUS -->
+    <!-- S2: CDA -->
+    <div id="s-cda" data-section="cda" style="padding-top: 64px;">
+      <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 6px;">
+        <div style="width: 40px; height: 40px; background: #EAF5F0; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#5F9E8C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #5F9E8C; margin-bottom: 2px;">Section 02</div>
+          <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; color: #1C1C2E; margin: 0; line-height: 1.1;">Child Development Account (CDA)</h2>
+        </div>
+      </div>
+      <p style="color: #6B7280; font-size: 14px; margin: 8px 0 28px; max-width: 660px; line-height: 1.75; font-weight: 300;">A government-backed savings account with two powerful benefits: an automatic First Step Grant, plus dollar-for-dollar matching on your deposits — up to a cap. Opening the CDA with a participating bank also automatically creates a <strong style="font-weight: 600; color: #1C1C2E;">Child's Savings Account (CSA)</strong> for your child at the same bank — no separate application needed.</p>
+      <div style="margin-bottom: 20px;"><a href="https://www.babybonus.msf.gov.sg/child-development-account/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 5px; font-size: 11px; color: #5F9E8C; font-weight: 500; text-decoration: none; background: #EAF5F0; padding: 4px 12px; border-radius: 20px; border: 1px solid #C0DFD8; letter-spacing: 0.01em;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>MSF — Child Development Account</a></div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+        <div style="background: linear-gradient(145deg, #5F9E8C 0%, #4A8878 100%); border-radius: 16px; padding: 28px; color: white;">
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 14px;">Automatic Government Grant</div>
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 700; line-height: 1; margin-bottom: 8px;">$5,000</div>
+          <div style="font-weight: 600; font-size: 15px; margin-bottom: 14px;">CDA First Step Grant</div>
+          <div style="font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.7; font-weight: 300;">Automatically credited to your child's CDA when the account is opened. No contribution required — the government deposits this for 1st and 2nd children.</div>
+          <div style="margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.18);">
+            <div style="font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 5px;">3rd child onwards (Large Families Scheme)</div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 700; line-height: 1;">$10,000</div>
+          </div>
+        </div>
+        <div style="background: white; border-radius: 16px; padding: 28px; box-shadow: 0 2px 20px rgba(0,0,0,0.07);">
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: #5F9E8C; margin-bottom: 8px;">Dollar-for-Dollar Co-Matching Cap</div>
+          <div style="font-size: 13px; color: #6B7280; margin-bottom: 22px; line-height: 1.65; font-weight: 300;">For every $1 you deposit, the government matches $1 — up to these caps. The equivalent of a guaranteed 100% return.</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: #F0FAF6; border-radius: 10px;"><div><div style="font-weight: 600; font-size: 14px; color: #1C1C2E;">1st Child</div><div style="font-size: 11px; color: #9CA3AF; margin-top: 2px;">Deposit up to this amount</div></div><div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: #5F9E8C;">$4,000</div></div>
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: #F0FAF6; border-radius: 10px;"><div><div style="font-weight: 600; font-size: 14px; color: #1C1C2E;">2nd Child</div><div style="font-size: 11px; color: #9CA3AF; margin-top: 2px;">Deposit up to this amount</div></div><div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: #5F9E8C;">$7,000</div></div>
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: #F0FAF6; border-radius: 10px;"><div><div style="font-weight: 600; font-size: 14px; color: #1C1C2E;">3rd &amp; 4th Child</div><div style="font-size: 11px; color: #9CA3AF; margin-top: 2px;">Deposit up to this amount</div></div><div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: #5F9E8C;">$9,000</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="background: white; border-radius: 16px; padding: 26px 28px; box-shadow: 0 2px 20px rgba(0,0,0,0.07);">
+        <div style="font-size: 10px; font-weight: 600; color: #5F9E8C; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 20px;">Approved Uses for CDA Funds</div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;">
+          <div style="text-align: center; padding: 20px 12px; background: #F5FAF8; border-radius: 12px;"><div style="width: 46px; height: 46px; background: #EAF5F0; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5F9E8C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div style="font-weight: 600; font-size: 12px; color: #1C1C2E; line-height: 1.3;">Infant Care &amp; Preschool</div><div style="font-size: 11px; color: #9CA3AF; margin-top: 5px; font-weight: 300;">Approved early childhood centres</div></div>
+          <div style="text-align: center; padding: 20px 12px; background: #F5FAF8; border-radius: 12px;"><div style="width: 46px; height: 46px; background: #EAF5F0; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5F9E8C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div style="font-weight: 600; font-size: 12px; color: #1C1C2E; line-height: 1.3;">Healthcare Bills</div><div style="font-size: 11px; color: #9CA3AF; margin-top: 5px; font-weight: 300;">Polyclinics &amp; CHAS GP clinics</div></div>
+          <div style="text-align: center; padding: 20px 12px; background: #F5FAF8; border-radius: 12px;"><div style="width: 46px; height: 46px; background: #EAF5F0; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5F9E8C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div style="font-weight: 600; font-size: 12px; color: #1C1C2E; line-height: 1.3;">Special Ed &amp; Early Intervention</div><div style="font-size: 11px; color: #9CA3AF; margin-top: 5px; font-weight: 300;">SPED schools &amp; EI centre fees</div></div>
+          <div style="text-align: center; padding: 20px 12px; background: #F5FAF8; border-radius: 12px;"><div style="width: 46px; height: 46px; background: #EAF5F0; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5F9E8C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><div style="font-weight: 600; font-size: 12px; color: #1C1C2E; line-height: 1.3;">Approved Pharmacies</div><div style="font-size: 11px; color: #9CA3AF; margin-top: 5px; font-weight: 300;">Participating retail pharmacies</div></div>
+        </div>
+      </div>
+      <div style="background: #EAF5F0; border: 1px solid #C0DFD8; border-radius: 12px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start; margin-top: 14px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5F9E8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <div>
+          <div style="font-weight: 600; font-size: 13px; color: #1C1C2E; margin-bottom: 6px;">Child LifeSG Credits — No Application Needed</div>
+          <div style="font-size: 13px; color: #374151; line-height: 1.75; font-weight: 300;">Singapore Citizen children automatically receive <strong style="font-weight: 600;">$500 in LifeSG credits</strong> in their LifeSG wallet — no application required. Credits are disbursed automatically and can be used at participating merchants island-wide.</div>
+          <a href="https://supportgowhere.life.gov.sg/schemes/GNAgZJDj/child-lifesg-credits" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 5px; font-size: 11px; color: #5F9E8C; font-weight: 600; text-decoration: none; margin-top: 10px; letter-spacing: 0.01em;">Learn more at SupportGoWhere →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- S3: BABY BONUS CASH GIFT -->
     <div id="s-baby-bonus" data-section="baby-bonus" style="padding-top: 64px;">
       <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 6px;">
         <div style="width: 40px; height: 40px; background: #FAEDF0; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#C4788A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="#C4788A" stroke="#C4788A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </div>
         <div>
-          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C4788A; margin-bottom: 2px;">Section 02</div>
+          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #C4788A; margin-bottom: 2px;">Section 03</div>
           <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; color: #1C1C2E; margin: 0; line-height: 1.1;">Baby Bonus Cash Gift</h2>
         </div>
       </div>
-      <p style="color: #6B7280; font-size: 14px; margin: 8px 0 28px; max-width: 660px; line-height: 1.75; font-weight: 300;">Disbursed in tranches from birth to 18 months. You must enrol within 12 months of your child's birth to receive all payments.</p>
+      <p style="color: #6B7280; font-size: 14px; margin: 8px 0 28px; max-width: 660px; line-height: 1.75; font-weight: 300;">Part of the government's <strong style="font-weight: 600; color: #1C1C2E;">Baby Bonus Scheme</strong>, the Cash Gift is disbursed in five tranches over 18 months and credited to your child's <strong style="font-weight: 600; color: #1C1C2E;">Child's Savings Account (CSA)</strong> — automatically opened alongside the CDA when you enrol with a participating bank. Enrol within 12 months of your child's birth.</p>
       <div style="margin-bottom: 20px;"><a href="https://www.babybonus.msf.gov.sg/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 5px; font-size: 11px; color: #C4788A; font-weight: 500; text-decoration: none; background: #FAEDF0; padding: 4px 12px; border-radius: 20px; border: 1px solid #F0C8D0; letter-spacing: 0.01em;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>MSF — Baby Bonus Scheme</a></div>
       <div style="background: #FFFFFF; border-radius: 16px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.07); margin-bottom: 14px;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 36px; flex-wrap: wrap; gap: 12px;">
@@ -181,59 +234,6 @@
         <div style="text-align: right;">
           <div style="font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 700; color: #C4788A;">$13,000</div>
           <div style="font-size: 12px; color: #9CA3AF;">Total Cash Gift</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- S3: CDA -->
-    <div id="s-cda" data-section="cda" style="padding-top: 64px;">
-      <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 6px;">
-        <div style="width: 40px; height: 40px; background: #EAF5F0; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#5F9E8C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        </div>
-        <div>
-          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #5F9E8C; margin-bottom: 2px;">Section 03</div>
-          <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; color: #1C1C2E; margin: 0; line-height: 1.1;">Child Development Account (CDA)</h2>
-        </div>
-      </div>
-      <p style="color: #6B7280; font-size: 14px; margin: 8px 0 28px; max-width: 660px; line-height: 1.75; font-weight: 300;">A government-backed savings account with two powerful benefits: an automatic First Step Grant, plus dollar-for-dollar matching on your deposits — up to a cap.</p>
-      <div style="margin-bottom: 20px;"><a href="https://www.babybonus.msf.gov.sg/child-development-account/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 5px; font-size: 11px; color: #5F9E8C; font-weight: 500; text-decoration: none; background: #EAF5F0; padding: 4px 12px; border-radius: 20px; border: 1px solid #C0DFD8; letter-spacing: 0.01em;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>MSF — Child Development Account</a></div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
-        <div style="background: linear-gradient(145deg, #5F9E8C 0%, #4A8878 100%); border-radius: 16px; padding: 28px; color: white;">
-          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 14px;">Automatic Government Grant</div>
-          <div style="font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 700; line-height: 1; margin-bottom: 8px;">$5,000</div>
-          <div style="font-weight: 600; font-size: 15px; margin-bottom: 14px;">CDA First Step Grant</div>
-          <div style="font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.7; font-weight: 300;">Automatically credited to your child's CDA when the account is opened. No contribution required — the government deposits this for 1st and 2nd children.</div>
-          <div style="margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.18);">
-            <div style="font-size: 12px; color: rgba(255,255,255,0.55); margin-bottom: 5px;">3rd child onwards (Large Families Scheme)</div>
-            <div style="font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 700; line-height: 1;">$10,000</div>
-          </div>
-        </div>
-        <div style="background: white; border-radius: 16px; padding: 28px; box-shadow: 0 2px 20px rgba(0,0,0,0.07);">
-          <div style="font-size: 10px; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: #5F9E8C; margin-bottom: 8px;">Dollar-for-Dollar Co-Matching Cap</div>
-          <div style="font-size: 13px; color: #6B7280; margin-bottom: 22px; line-height: 1.65; font-weight: 300;">For every $1 you deposit, the government matches $1 — up to these caps. The equivalent of a guaranteed 100% return.</div>
-          <div style="display: flex; flex-direction: column; gap: 10px;">
-            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: #F0FAF6; border-radius: 10px;"><div><div style="font-weight: 600; font-size: 14px; color: #1C1C2E;">1st Child</div><div style="font-size: 11px; color: #9CA3AF; margin-top: 2px;">Deposit up to this amount</div></div><div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: #5F9E8C;">$4,000</div></div>
-            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: #F0FAF6; border-radius: 10px;"><div><div style="font-weight: 600; font-size: 14px; color: #1C1C2E;">2nd Child</div><div style="font-size: 11px; color: #9CA3AF; margin-top: 2px;">Deposit up to this amount</div></div><div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: #5F9E8C;">$7,000</div></div>
-            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; background: #F0FAF6; border-radius: 10px;"><div><div style="font-weight: 600; font-size: 14px; color: #1C1C2E;">3rd &amp; 4th Child</div><div style="font-size: 11px; color: #9CA3AF; margin-top: 2px;">Deposit up to this amount</div></div><div style="font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: #5F9E8C;">$9,000</div></div>
-          </div>
-        </div>
-      </div>
-      <div style="background: white; border-radius: 16px; padding: 26px 28px; box-shadow: 0 2px 20px rgba(0,0,0,0.07);">
-        <div style="font-size: 10px; font-weight: 600; color: #5F9E8C; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 20px;">Approved Uses for CDA Funds</div>
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;">
-          <div style="text-align: center; padding: 20px 12px; background: #F5FAF8; border-radius: 12px;"><div style="width: 46px; height: 46px; background: #EAF5F0; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5F9E8C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><div style="font-weight: 600; font-size: 12px; color: #1C1C2E; line-height: 1.3;">Infant Care &amp; Preschool</div><div style="font-size: 11px; color: #9CA3AF; margin-top: 5px; font-weight: 300;">Approved early childhood centres</div></div>
-          <div style="text-align: center; padding: 20px 12px; background: #F5FAF8; border-radius: 12px;"><div style="width: 46px; height: 46px; background: #EAF5F0; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5F9E8C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div style="font-weight: 600; font-size: 12px; color: #1C1C2E; line-height: 1.3;">Healthcare Bills</div><div style="font-size: 11px; color: #9CA3AF; margin-top: 5px; font-weight: 300;">Polyclinics &amp; CHAS GP clinics</div></div>
-          <div style="text-align: center; padding: 20px 12px; background: #F5FAF8; border-radius: 12px;"><div style="width: 46px; height: 46px; background: #EAF5F0; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5F9E8C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div style="font-weight: 600; font-size: 12px; color: #1C1C2E; line-height: 1.3;">Special Ed &amp; Early Intervention</div><div style="font-size: 11px; color: #9CA3AF; margin-top: 5px; font-weight: 300;">SPED schools &amp; EI centre fees</div></div>
-          <div style="text-align: center; padding: 20px 12px; background: #F5FAF8; border-radius: 12px;"><div style="width: 46px; height: 46px; background: #EAF5F0; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5F9E8C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><div style="font-weight: 600; font-size: 12px; color: #1C1C2E; line-height: 1.3;">Approved Pharmacies</div><div style="font-size: 11px; color: #9CA3AF; margin-top: 5px; font-weight: 300;">Participating retail pharmacies</div></div>
-        </div>
-      </div>
-      <div style="background: #EAF5F0; border: 1px solid #C0DFD8; border-radius: 12px; padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start; margin-top: 14px;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5F9E8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <div>
-          <div style="font-weight: 600; font-size: 13px; color: #1C1C2E; margin-bottom: 6px;">Child LifeSG Credits — No Application Needed</div>
-          <div style="font-size: 13px; color: #374151; line-height: 1.75; font-weight: 300;">Singapore Citizen children automatically receive <strong style="font-weight: 600;">$500 in LifeSG credits</strong> in their LifeSG wallet — no application required. Credits are disbursed automatically and can be used at participating merchants island-wide.</div>
-          <a href="https://supportgowhere.life.gov.sg/schemes/GNAgZJDj/child-lifesg-credits" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 5px; font-size: 11px; color: #5F9E8C; font-weight: 600; text-decoration: none; margin-top: 10px; letter-spacing: 0.01em;">Learn more at SupportGoWhere →</a>
         </div>
       </div>
     </div>
