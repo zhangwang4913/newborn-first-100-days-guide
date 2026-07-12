@@ -569,7 +569,7 @@
       <div style="background:white; border-radius:16px; padding:28px 24px; box-shadow:0 2px 20px rgba(0,0,0,0.07); margin-top:24px;">
         <div style="margin-bottom:20px;">
           <div style="font-weight:700; font-size:15px; color:#1C1C2E; margin-bottom:4px; font-family:'DM Sans',sans-serif;">The Earlier You Start, the Less You Need Each Month</div>
-          <div style="font-size:12px; color:#6B7280; font-weight:300; line-height:1.65; font-family:'DM Sans',sans-serif;">Monthly savings required to reach your university target by age 19 — toggle target and return assumption below</div>
+          <div style="font-size:12px; color:#6B7280; font-weight:300; line-height:1.65; font-family:'DM Sans',sans-serif;">Monthly savings required to reach your university target by age <span id="edu-subtitle-age">19</span> — toggle options below</div>
         </div>
         <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:22px;">
           <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
@@ -582,6 +582,11 @@
             <span style="font-size:11px; color:#9CA3AF; font-family:'DM Sans',sans-serif; min-width:116px; font-weight:400;">Return assumption</span>
             <button id="edu-btn-r4" onclick="eduSetRate(0.04)" style="font-family:'DM Sans',sans-serif; font-size:12px; padding:7px 12px; border-radius:20px; border:1.5px solid #C07858; background:#C07858; color:white; cursor:pointer; font-weight:600; white-space:nowrap; transition:all 0.2s;">4% p.a.</button>
             <button id="edu-btn-r8" onclick="eduSetRate(0.08)" style="font-family:'DM Sans',sans-serif; font-size:12px; padding:7px 12px; border-radius:20px; border:1.5px solid #E2DDD8; background:transparent; color:#6B7280; cursor:pointer; font-weight:400; white-space:nowrap; transition:all 0.2s;">8% p.a.</button>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+            <span style="font-size:11px; color:#9CA3AF; font-family:'DM Sans',sans-serif; min-width:116px; font-weight:400;">Child</span>
+            <button id="edu-btn-girl" onclick="eduSetGender('girl')" style="font-family:'DM Sans',sans-serif; font-size:12px; padding:7px 14px; border-radius:20px; border:1.5px solid #1C2B3A; background:#1C2B3A; color:white; cursor:pointer; font-weight:600; white-space:nowrap; transition:all 0.2s;">Girl — Uni at 19</button>
+            <button id="edu-btn-boy" onclick="eduSetGender('boy')" style="font-family:'DM Sans',sans-serif; font-size:12px; padding:7px 14px; border-radius:20px; border:1.5px solid #E2DDD8; background:transparent; color:#6B7280; cursor:pointer; font-weight:400; white-space:nowrap; transition:all 0.2s;">Boy — Uni at 22 (after NS)</button>
           </div>
         </div>
         <div style="overflow-x:auto; -webkit-overflow-scrolling:touch; margin:0 -4px;">
@@ -597,9 +602,9 @@
           </div>
         </div>
         <div style="display:flex; gap:20px; flex-wrap:wrap; margin-top:14px; padding:0 4px;">
-          <div style="display:flex; align-items:center; gap:7px;"><div style="width:24px; height:10px; border-radius:3px; background:#86b6ef; flex-shrink:0;"></div><span style="font-size:12px; color:#52514e; font-family:'DM Sans',sans-serif; font-weight:300;">Start at Birth (19 yrs)</span></div>
-          <div style="display:flex; align-items:center; gap:7px;"><div style="width:24px; height:10px; border-radius:3px; background:#2a78d6; flex-shrink:0;"></div><span style="font-size:12px; color:#52514e; font-family:'DM Sans',sans-serif; font-weight:300;">Start at Primary — Age 7 (12 yrs)</span></div>
-          <div style="display:flex; align-items:center; gap:7px;"><div style="width:24px; height:10px; border-radius:3px; background:#1C2B3A; flex-shrink:0;"></div><span style="font-size:12px; color:#52514e; font-family:'DM Sans',sans-serif; font-weight:300;">Start at Secondary — Age 13 (6 yrs)</span></div>
+          <div style="display:flex; align-items:center; gap:7px;"><div style="width:24px; height:10px; border-radius:3px; background:#86b6ef; flex-shrink:0;"></div><span id="edu-legend-0" style="font-size:12px; color:#52514e; font-family:'DM Sans',sans-serif; font-weight:300;">Birth (Age 0) — save for 19 yrs</span></div>
+          <div style="display:flex; align-items:center; gap:7px;"><div style="width:24px; height:10px; border-radius:3px; background:#2a78d6; flex-shrink:0;"></div><span id="edu-legend-1" style="font-size:12px; color:#52514e; font-family:'DM Sans',sans-serif; font-weight:300;">Primary 1 (Age 7) — save for 12 yrs</span></div>
+          <div style="display:flex; align-items:center; gap:7px;"><div style="width:24px; height:10px; border-radius:3px; background:#1C2B3A; flex-shrink:0;"></div><span id="edu-legend-2" style="font-size:12px; color:#52514e; font-family:'DM Sans',sans-serif; font-weight:300;">Sec 1 (Age 13) — save for 6 yrs</span></div>
         </div>
         <div style="margin-top:18px; padding-top:14px; border-top:1px solid #F0EDE9;">
           <button id="edu-tbl-btn" onclick="eduToggleTable()" style="font-family:'DM Sans',sans-serif; font-size:11px; color:#9CA3AF; background:none; border:none; cursor:pointer; padding:0; text-decoration:underline; text-underline-offset:3px;">View data as table</button>
@@ -608,7 +613,7 @@
               <thead>
                 <tr style="border-bottom:2px solid #E2DDD8;">
                   <th style="text-align:left; padding:7px 10px; color:#6B7280; font-weight:600;">Starting Age</th>
-                  <th style="text-align:right; padding:7px 10px; color:#6B7280; font-weight:600;">Years</th>
+                  <th style="text-align:right; padding:7px 10px; color:#6B7280; font-weight:600;">Yrs to Uni</th>
                   <th style="text-align:right; padding:7px 10px; color:#6B7280; font-weight:600;">$60k (Arts/Sci)</th>
                   <th style="text-align:right; padding:7px 10px; color:#6B7280; font-weight:600;">$250k (Medicine)</th>
                   <th style="text-align:right; padding:7px 10px; color:#6B7280; font-weight:600;">$400k (Overseas)</th>
@@ -617,21 +622,21 @@
               <tbody>
                 <tr style="border-bottom:1px solid #F0EDE9;">
                   <td style="padding:8px 10px; font-weight:500; color:#1C1C2E;">Birth (Age 0)</td>
-                  <td style="padding:8px 10px; text-align:right; color:#6B7280;">19</td>
+                  <td id="etbl-yrs-0" style="padding:8px 10px; text-align:right; color:#6B7280;">19</td>
                   <td id="etbl-60-0" style="padding:8px 10px; text-align:right; font-weight:600; color:#1C1C2E; font-variant-numeric:tabular-nums;"></td>
                   <td id="etbl-250-0" style="padding:8px 10px; text-align:right; font-weight:600; color:#1C1C2E; font-variant-numeric:tabular-nums;"></td>
                   <td id="etbl-400-0" style="padding:8px 10px; text-align:right; font-weight:600; color:#1C1C2E; font-variant-numeric:tabular-nums;"></td>
                 </tr>
                 <tr style="border-bottom:1px solid #F0EDE9;">
-                  <td style="padding:8px 10px; font-weight:500; color:#1C1C2E;">Primary School (Age 7)</td>
-                  <td style="padding:8px 10px; text-align:right; color:#6B7280;">12</td>
+                  <td style="padding:8px 10px; font-weight:500; color:#1C1C2E;">Primary 1 (Age 7)</td>
+                  <td id="etbl-yrs-1" style="padding:8px 10px; text-align:right; color:#6B7280;">12</td>
                   <td id="etbl-60-1" style="padding:8px 10px; text-align:right; font-weight:600; color:#1C1C2E; font-variant-numeric:tabular-nums;"></td>
                   <td id="etbl-250-1" style="padding:8px 10px; text-align:right; font-weight:600; color:#1C1C2E; font-variant-numeric:tabular-nums;"></td>
                   <td id="etbl-400-1" style="padding:8px 10px; text-align:right; font-weight:600; color:#1C1C2E; font-variant-numeric:tabular-nums;"></td>
                 </tr>
                 <tr>
-                  <td style="padding:8px 10px; font-weight:500; color:#1C1C2E;">Secondary School (Age 13)</td>
-                  <td style="padding:8px 10px; text-align:right; color:#6B7280;">6</td>
+                  <td style="padding:8px 10px; font-weight:500; color:#1C1C2E;">Sec 1 (Age 13)</td>
+                  <td id="etbl-yrs-2" style="padding:8px 10px; text-align:right; color:#6B7280;">6</td>
                   <td id="etbl-60-2" style="padding:8px 10px; text-align:right; font-weight:600; color:#1C1C2E; font-variant-numeric:tabular-nums;"></td>
                   <td id="etbl-250-2" style="padding:8px 10px; text-align:right; font-weight:600; color:#1C1C2E; font-variant-numeric:tabular-nums;"></td>
                   <td id="etbl-400-2" style="padding:8px 10px; text-align:right; font-weight:600; color:#1C1C2E; font-variant-numeric:tabular-nums;"></td>
@@ -643,21 +648,46 @@
       </div>
       <script>
       (function(){
-        var YEARS=[19,12,6];
         var COLORS=['#86b6ef','#2a78d6','#1C2B3A'];
-        var XLABELS=[['Start at','Birth','(19 yrs)'],['Start at','Primary','(12 yrs)'],['Start at','Secondary','(6 yrs)']];
-        var currentTarget=60000,currentRate=0.04;
+        var currentTarget=60000,currentRate=0.04,currentGender='girl';
+
+        function getYears(){return currentGender==='girl'?[19,12,6]:[22,15,9];}
+
+        function getXLabels(){
+          var yrs=getYears();
+          return [
+            ['Birth (Age 0)','save for '+yrs[0]+' yrs'],
+            ['Primary 1 (Age 7)','save for '+yrs[1]+' yrs'],
+            ['Sec 1 (Age 13)','save for '+yrs[2]+' yrs']
+          ];
+        }
+
         function calcPMT(fv,rate,yrs){var r=rate/12,n=yrs*12;return Math.round(fv*r/(Math.pow(1+r,n)-1));}
-        function getVals(rate){var v={};[60000,250000,400000].forEach(function(t){v[t]=YEARS.map(function(y){return calcPMT(t,rate,y);});});return v;}
+
+        function getVals(rate){
+          var yrs=getYears(),v={};
+          [60000,250000,400000].forEach(function(t){v[t]=yrs.map(function(y){return calcPMT(t,rate,y);});});
+          return v;
+        }
+
         function fillTable(rate){
-          var v=getVals(rate);
-          var pmap={60000:'60',250000:'250',400000:'400'};
+          var v=getVals(rate),pmap={60000:'60',250000:'250',400000:'400'};
           [60000,250000,400000].forEach(function(t){
             var p=pmap[t];
             v[t].forEach(function(val,i){var c=document.getElementById('etbl-'+p+'-'+i);if(c)c.textContent='$'+val.toLocaleString('en-SG')+'/mo';});
           });
+          var yrs=getYears();
+          [0,1,2].forEach(function(i){var c=document.getElementById('etbl-yrs-'+i);if(c)c.textContent=yrs[i];});
         }
-        var W=580,H=310,PL=64,PR=20,PT=24,PB=70;
+
+        function updateDynamicLabels(){
+          var yrs=getYears(),uniAge=currentGender==='girl'?19:22;
+          var el=document.getElementById('edu-subtitle-age');if(el)el.textContent=uniAge;
+          var legends=['Birth (Age 0) — save for '+yrs[0]+' yrs','Primary 1 (Age 7) — save for '+yrs[1]+' yrs','Sec 1 (Age 13) — save for '+yrs[2]+' yrs'];
+          [0,1,2].forEach(function(i){var el=document.getElementById('edu-legend-'+i);if(el)el.textContent=legends[i];});
+        }
+
+        var W=580,H=310,PL=64,PR=20,PT=24,PB=72;
         var plotW=W-PL-PR,plotH=H-PT-PB,plotB=PT+plotH,barW=88;
         var barX=[PL+plotW/6,PL+plotW/2,PL+5*plotW/6];
         var NS='http://www.w3.org/2000/svg';
@@ -666,6 +696,7 @@
         function mkT(s,a){var e=mk('text',a);e.textContent=s;return e;}
         function ins(e){svg.insertBefore(e,tip);}
         function axisFor(t){if(t===60000)return {yMax:800,ticks:[0,200,400,600,800]};if(t===250000)return {yMax:4000,ticks:[0,1000,2000,3000,4000]};return {yMax:5000,ticks:[0,1000,2000,3000,4000,5000]};}
+
         function render(target,rate){
           [].slice.call(svg.children).forEach(function(c){if(c.id!=='edu-tip')c.remove();});
           var ax=axisFor(target),sc=plotH/ax.yMax,vs=getVals(rate)[target];
@@ -676,6 +707,7 @@
             ins(mkT(lbl,{x:PL-6,y:y+4,'text-anchor':'end',fill:'#9CA3AF','font-family':'DM Sans, sans-serif','font-size':'11','font-variant-numeric':'tabular-nums'}));
           });
           ins(mk('line',{x1:PL,y1:plotB,x2:W-PR,y2:plotB,stroke:'#C3C2B7','stroke-width':'1'}));
+          var xlabels=getXLabels();
           vs.forEach(function(v,i){
             var bh=v*sc,bx=barX[i]-barW/2,by=plotB-bh;
             var rect=mk('rect',{x:bx,y:by,width:barW,height:bh,fill:COLORS[i],rx:'4',ry:'4',style:'cursor:pointer;'});
@@ -685,16 +717,17 @@
             })(i,v,target,rate);
             ins(rect);
             ins(mkT('$'+v.toLocaleString('en-SG')+'/mo',{x:barX[i],y:by-8,'text-anchor':'middle',fill:'#1C1C2E','font-family':'DM Sans, sans-serif','font-size':'13','font-weight':'700','font-variant-numeric':'tabular-nums'}));
-            XLABELS[i].forEach(function(ln,li){
-              ins(mkT(ln,{x:barX[i],y:plotB+16+li*16,'text-anchor':'middle',fill:li===1?'#1C1C2E':'#9CA3AF','font-family':'DM Sans, sans-serif','font-size':li===1?'13':'11','font-weight':li===1?'600':'300'}));
+            xlabels[i].forEach(function(ln,li){
+              ins(mkT(ln,{x:barX[i],y:plotB+17+li*17,'text-anchor':'middle',fill:li===0?'#1C1C2E':'#9CA3AF','font-family':'DM Sans, sans-serif','font-size':li===0?'12':'10','font-weight':li===0?'600':'300'}));
             });
           });
         }
+
         function showTip(idx,v,target,rate){
-          var ax=axisFor(target),months=YEARS[idx]*12,paid=v*months,growth=target-paid;
+          var yrs=getYears(),ax=axisFor(target),months=yrs[idx]*12,paid=v*months,growth=target-paid;
           var t1=document.getElementById('edu-tip-t1'),t2=document.getElementById('edu-tip-t2'),t3=document.getElementById('edu-tip-t3'),bg=document.getElementById('edu-tip-bg');
           t1.textContent='$'+v.toLocaleString('en-SG')+' / month';
-          t2.textContent='Total saved: $'+paid.toLocaleString('en-SG')+' over '+YEARS[idx]+' years';
+          t2.textContent='Total saved: $'+paid.toLocaleString('en-SG')+' over '+yrs[idx]+' years';
           t3.textContent=growth>=0?'Returns contribute: $'+growth.toLocaleString('en-SG'):'';
           var tw=232,th=72,bh=v*(plotH/ax.yMax);
           var tx=barX[idx]-tw/2,ty=plotB-bh-th-14;
@@ -705,7 +738,9 @@
           t3.setAttribute('x',tx+12);t3.setAttribute('y',ty+56);
           tip.style.display='';
         }
+
         function hideTip(){tip.style.display='none';}
+
         function setTargetBtns(target){
           ['60','250','400'].forEach(function(k){
             var b=document.getElementById('edu-btn-'+k),active=(Number(k)*1000===target);
@@ -713,6 +748,7 @@
             b.style.borderColor=active?'#1C2B3A':'#E2DDD8';b.style.fontWeight=active?'600':'400';
           });
         }
+
         function setRateBtns(rate){
           ['4','8'].forEach(function(k){
             var b=document.getElementById('edu-btn-r'+k),active=(k==='4')===(rate===0.04);
@@ -720,13 +756,24 @@
             b.style.borderColor=active?'#C07858':'#E2DDD8';b.style.fontWeight=active?'600':'400';
           });
         }
+
+        function setGenderBtns(gender){
+          ['girl','boy'].forEach(function(k){
+            var b=document.getElementById('edu-btn-'+k),active=(k===gender);
+            b.style.background=active?'#1C2B3A':'transparent';b.style.color=active?'white':'#6B7280';
+            b.style.borderColor=active?'#1C2B3A':'#E2DDD8';b.style.fontWeight=active?'600':'400';
+          });
+        }
+
         window.eduSetTarget=function(target){currentTarget=target;setTargetBtns(target);render(target,currentRate);};
         window.eduSetRate=function(rate){currentRate=rate;setRateBtns(rate);fillTable(rate);render(currentTarget,rate);};
+        window.eduSetGender=function(gender){currentGender=gender;setGenderBtns(gender);updateDynamicLabels();fillTable(currentRate);render(currentTarget,currentRate);};
         window.eduToggleTable=function(){
           var tbl=document.getElementById('edu-tbl'),btn=document.getElementById('edu-tbl-btn'),hidden=tbl.style.display==='none';
           tbl.style.display=hidden?'block':'none';btn.textContent=hidden?'Hide table':'View data as table';
         };
-        fillTable(currentRate);render(currentTarget,currentRate);
+
+        fillTable(currentRate);updateDynamicLabels();render(currentTarget,currentRate);
       })();
       </script>
     </div>
